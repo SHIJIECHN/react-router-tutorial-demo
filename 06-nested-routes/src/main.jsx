@@ -9,17 +9,21 @@ import './index.css'
 import ErrorPage from './error-page.jsx' // 错误页面组件
 /** existing import */
 import Contact from './routes/contact.jsx'
+import { Children } from 'react'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    errorElement: <ErrorPage/> // 错误展示组件
+    errorElement: <ErrorPage/>, // 错误展示组件
+    children: [
+      {
+        path: 'contacts/:contactId',
+        element: <Contact/>
+      }
+    ]
   },
-  {
-    path: 'contacts/:contactId',
-    element: <Contact/>
-  }
+  
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

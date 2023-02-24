@@ -1,6 +1,7 @@
 export default function Root() {
   return (
     <>
+      {/* 左侧边栏 */}
       <div id="sidebar">
         <h1>React Router Contacts</h1>
         <div>
@@ -35,6 +36,7 @@ export default function Root() {
           </ul>
         </nav>
       </div>
+      {/* 右边具体内容 */}
       <div id="detail"></div>
     </>
   );
